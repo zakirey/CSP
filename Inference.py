@@ -40,7 +40,6 @@ def ac3(csp, queue=None, removals=None):
 def revise(csp, xi, xj, removals, checks=0):
     revised = False
     for x in csp.curr_domains[xi][:]:
-        # if all(not csp.constraints(xi, x, xj, y) for y in csp.curr_domains[xj]):
         conflict = True
         for y in csp.curr_domains[xj]:
             if csp.constraints(xi, x, xj, y):
